@@ -6,7 +6,7 @@ export NVM_DIR="$HOME/.nvm"
 function get_bitwarden_ids {
     local ssh_key=$1
     local jq_filter='.[0] | .id, (.attachments[] | select( .fileName == "'id_rsa_${ssh_key}'" or .fileName == "'id_rsa_${ssh_key}.pub'") | .id, .fileName)'
-    bw list items --search "$ssh_key ssh" | jq "$jq_filter" --raw-output
+    bw list items --search "${ssh_key}-ssh" | jq "$jq_filter" --raw-output
 }
 
 [[ -d "$HOME/.ssh" ]] || mkdir "$HOME/.ssh"
