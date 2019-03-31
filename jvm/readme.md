@@ -1,0 +1,2 @@
+
+Install sdkman and java
