@@ -9,14 +9,16 @@ function get_bitwarden_ids {
     bw list items --search "$ssh_key ssh" | jq "$jq_filter" --raw-output
 }
 
+[[ -d "$HOME/.ssh" ]] || mkdir "$HOME/.ssh"
+
 # login to bitwarden
 export BW_SESSION=`bw login --raw`
 
 for ssh_key in "github" "gitlab"
 do
     ids=( $(get_bitwarden_ids $ssh_key) )
-    bw get attachment ${ids[1]} --itemid ${ids[0]} --output "${ids[2]}"
-    bw get attachment ${ids[3]} --itemid ${ids[0]} --output "${ids[4]}"
+    bw get attachment ${ids[1]} --itemid ${ids[0]} --output "$HOME/.ssh/${ids[2]}"
+    bw get attachment ${ids[3]} --itemid ${ids[0]} --output "$HOME/.ssh/${ids[4]}"
 done
 
 config_file="$dir/config"
