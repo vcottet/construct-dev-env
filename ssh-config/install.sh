@@ -24,3 +24,5 @@ done
 config_file="$dir/config"
 current_config_file="$HOME/.ssh/config"
 cp "$config_file" "$current_config_file"
+
+chmod 600 "$HOME/.ssh/*"
