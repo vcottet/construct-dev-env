@@ -1,0 +1,1 @@
+command -v jq > /dev/null
