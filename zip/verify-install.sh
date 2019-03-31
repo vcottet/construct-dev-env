@@ -1,0 +1,1 @@
+command -v zip > /dev/null
