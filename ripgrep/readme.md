@@ -1,0 +1,4 @@
+
+Ripgrep
+
+Installed using cargo
