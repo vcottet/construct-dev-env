@@ -18,11 +18,12 @@ for ssh_key in "github" "gitlab"
 do
     ids=( $(get_bitwarden_ids $ssh_key) )
     bw get attachment ${ids[1]} --itemid ${ids[0]} --output "$HOME/.ssh/${ids[2]}"
+    chmod 600 "$HOME/.ssh/${ids[2]}"
     bw get attachment ${ids[3]} --itemid ${ids[0]} --output "$HOME/.ssh/${ids[4]}"
+    chmod 600 "$HOME/.ssh/${ids[4]}"
 done
 
 config_file="$dir/config"
 current_config_file="$HOME/.ssh/config"
 cp "$config_file" "$current_config_file"
-
-chmod 600 "$HOME/.ssh/*"
+chmod 600 "$current_config_file"
