@@ -8,4 +8,4 @@ aliases_file="$dir/aliases.zsh"
 current_aliases_file="$HOME/.oh-my-zsh/custom/aliases.zsh"
 cp "$aliases_file" "$current_aliases_file"
 
-rm "$HOME/.zprofile"
+rm -f "$HOME/.zprofile"
