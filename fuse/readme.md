@@ -1,0 +1,2 @@
+
+fuse, for appimages
