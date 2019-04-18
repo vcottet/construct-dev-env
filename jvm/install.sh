@@ -1,6 +1,6 @@
 curl -sSL http://get.sdkman.io | bash
 
-sdks=( "java 8.0.202-zulu" "gradle" "maven")
+sdks=( "java 8.0.212-zulu" "gradle" "maven")
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export sdkman_auto_answer=true
