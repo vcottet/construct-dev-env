@@ -1,1 +1,1 @@
-command -v fuse > /dev/null
+command -v fusermount > /dev/null

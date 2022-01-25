@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ -z ${BW_SESSION+x} ]]; then
+	export BW_SESSION=`bw unlock --raw`
+fi
+
+for ssh_key in "github" "gitlab"
+do
+	add-ssh-key $HOME/.ssh/id_rsa_$ssh_key `bw get password $ssh_key-ssh`
+done
+

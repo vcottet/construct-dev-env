@@ -27,3 +27,11 @@ config_file="$dir/config"
 current_config_file="$HOME/.ssh/config"
 cp "$config_file" "$current_config_file"
 chmod 600 "$current_config_file"
+
+add_ssh_key_script="$dir/add-ssh-key"
+add_ssh_keys_script="$dir/add-ssh-keys"
+current_bin_dir="$HOME/.local/bin"
+mkdir -p "$current_bin_dir"
+cp "$add_ssh_key_script" "$current_bin_dir"
+cp "$add_ssh_keys_script" "$current_bin_dir"
+

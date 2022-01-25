@@ -1,1 +1,1 @@
-command -v python > /dev/null
+command -v python2 > /dev/null
